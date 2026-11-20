@@ -5,23 +5,27 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-xs font-medium uppercase tracking-[0.2em] cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+        default: "bg-primary text-primary-foreground hover:bg-wine-soft",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "border border-primary/30 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-rose/40",
+        ghost: "hover:bg-secondary hover:text-secondary-foreground",
+        link: "text-foreground underline-offset-8 decoration-rose hover:underline normal-case tracking-normal",
+        rose: "bg-rose text-wine hover:bg-champagne shadow-rose",
+        ivory: "bg-ivory text-wine hover:bg-champagne",
+        "outline-light":
+          "border border-champagne/50 bg-transparent text-ivory hover:bg-ivory hover:text-wine",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "h-9 w-9",
+        default: "h-11 px-6",
+        sm: "h-9 px-4 text-[0.65rem]",
+        lg: "h-13 px-10",
+        icon: "h-10 w-10 tracking-normal",
       },
     },
     defaultVariants: {

@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Store catalog (products, categories, images) lives in `src/lib/catalog.ts` as static sample data; why: no backend yet, one source for all pages.
+- Cart pricing rules (shipping threshold, fee, Pix discount) live only in `src/lib/cart-math.ts` with tests in `cart-math.test.ts`; why: checkout, cart and sheet must agree.
+- Cart and placed orders persist in browser localStorage (`src/lib/cart.tsx`, `src/lib/orders.ts`), read in effects; why: avoids SSR hydration mismatch until Lovable Cloud is added.
+- Brand visuals use semantic tokens in `src/styles.css` (wine, rose, champagne, ivory) and the `Logo`/`Monogram` components; never hardcode colors or redraw the logo inline.
